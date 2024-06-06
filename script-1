@@ -13,4 +13,7 @@
           - httpd
           - vim
           - git
+          - yum
+          - apt
+          
         state: present
