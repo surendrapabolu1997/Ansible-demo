@@ -1,0 +1,13 @@
+- name: Update and install packages on CentOS
+  hosts: all
+  become: true
+  tasks:
+    - name: Update yum repository cache
+      yum:
+        name: "*"
+        state: latest
+
+    - name: Install httpd
+      yum:
+        name: httpd
+        state: present
