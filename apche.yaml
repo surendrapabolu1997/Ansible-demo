@@ -1,0 +1,25 @@
+---
+- name: Install and start Apache on CentOS
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Ensure Apache is installed
+      yum:
+        name: httpd
+        state: present
+
+    - name: Ensure Apache is started
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Open HTTP port in firewall
+      firewalld:
+        service: http
+        permanent: yes
+        state: enabled
+        immediate: yes
+
+    - name: Reload firewalld
+      command: firewall-cmd --reload
