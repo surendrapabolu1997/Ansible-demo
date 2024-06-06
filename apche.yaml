@@ -1,6 +1,6 @@
 ---
 - name: Install and start Apache on CentOS
-  hosts: webservers
+  hosts: all
   become: yes
   tasks:
     - name: Ensure Apache is installed
