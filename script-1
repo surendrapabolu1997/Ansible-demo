@@ -1,0 +1,16 @@
+- name: Install packages on CentOS
+  hosts: your_host_group
+  become: yes
+  tasks:
+    - name: Update all packages to the latest version
+      yum:
+        name: "*"
+        state: latest
+    
+    - name: Install specific packages
+      yum:
+        name:
+          - httpd
+          - vim
+          - git
+        state: present
