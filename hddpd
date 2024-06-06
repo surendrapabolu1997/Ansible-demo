@@ -11,3 +11,9 @@
       yum:
         name: httpd
         state: present
+
+    - name: Update package repository cache
+      yum:
+        name: '*'
+        state: latest
+
