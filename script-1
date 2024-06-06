@@ -1,5 +1,5 @@
 - name: Install packages on CentOS
-  hosts: your_host_group
+  hosts: all
   become: yes
   tasks:
     - name: Update all packages to the latest version
