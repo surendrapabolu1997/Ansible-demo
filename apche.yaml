@@ -14,11 +14,6 @@
         state: started
         enabled: yes
 
-    - name: Open HTTP port in firewall
-      firewalld:
-        service: http
-        permanent: yes
-        state: enabled
-        immediate: yes
+
 
 
