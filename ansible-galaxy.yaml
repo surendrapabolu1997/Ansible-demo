@@ -1,0 +1,6 @@
+---
+- name: Install and start Apache on CentOS
+  hosts: all
+  become: yes
+  roles:
+   - bsmeding.docker
